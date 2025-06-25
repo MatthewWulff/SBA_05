@@ -1,6 +1,7 @@
 import express from "express"
 import mongoose from "mongoose"
 import "dotenv/config"
+import Account from "./models/Account.js"
 
 const app = express()
 
