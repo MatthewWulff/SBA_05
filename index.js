@@ -14,6 +14,14 @@ app.get("/accounts" , async(req,res)=>{
     const accounts = await Account.find({}, {accountbalance:0})
     res.json(accounts)
 })
+app.get("/search", async (req,res)=>{
+    const name = req.query.fullname
+    if(!name){
+        return res.status(400).json({message : "Name required"})
+    }
+    const results = await Account.find({fullname : name})
+    res.json(results)
+})
 
 
 
