@@ -4,7 +4,7 @@ const accountSchema = new mongoose.Schema({
   fullname: {
     type: String,
     required: true,
-    unique: true,
+ 
   },
   phone: {
     type: Number,
@@ -15,7 +15,7 @@ const accountSchema = new mongoose.Schema({
   },
   accountbalance: {
     type: Number,
-    default: 0,
+    required:true
   },
 })
 
