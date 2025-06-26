@@ -44,5 +44,10 @@ app.post("/newaccount", async (req, res) => {
     res.status(500).json({ message: "error", error: error.message })
   }
 })
+app.delete("/account/:fullname", async(req,res)=>{
+const name = req.params.fullname
+const deleteAccount = await Account.findOneAndDelete({fullname:name})
+res.json({message : "Account deleted"})
+})
 
 app.listen(PORT, () => console.log("port listening"))
